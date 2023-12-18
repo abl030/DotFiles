@@ -84,7 +84,7 @@ plugins=(       tmux
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/dotfiles/remote_ssh_nosleep.sh
+source $ZSH/remote_ssh_nosleep.sh
 
 # User configuration
 
