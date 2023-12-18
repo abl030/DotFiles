@@ -81,6 +81,7 @@ plugins=(       tmux
                 autoupdate      # https://github.com/tamcore/autoupdate-oh-my-zsh-plugins
                 zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
                 zsh-autosuggestions
+                zsh-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
