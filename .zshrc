@@ -92,7 +92,7 @@ plugins=(       tmux
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/remote_ssh_nosleep.sh
+# source ~/remote_ssh_nosleep.sh
 
 # User configuration
 
@@ -126,3 +126,25 @@ source ~/remote_ssh_nosleep.sh
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
+
+# Autocompletion function
+_nosleep() {
+    _arguments ':action:->action'
+    case $state in
+        (action)
+            _describe 'actions' \
+                'sleep.target:Mask sleep.target' \
+                'suspend.target:Mask suspend.target' \
+                'hibernate.target:Mask hibernate.target' \
+                'hybrid-sleep.target:Mask hybrid-sleep.target'
+            ;;
+    esac
+}
+compdef _nosleep nosleep
+
+alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
+
+alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl suspend'
+
