@@ -71,7 +71,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-bindkey '^I^I' autosuggest-accept
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -95,6 +94,7 @@ plugins=(       tmux
 source $ZSH/oh-my-zsh.sh
 # source ~/remote_ssh_nosleep.sh
 
+bindkey '^I^I' autosuggest-accept
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
