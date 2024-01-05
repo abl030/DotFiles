@@ -71,6 +71,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+bindkey '^I^I' autosuggest-accept
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -146,5 +147,5 @@ compdef _nosleep nosleep
 
 alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
 
-alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl suspend'
+alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl suspend && exit'
 
