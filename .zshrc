@@ -89,6 +89,7 @@ plugins=(       tmux
                 zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
                 zsh-autosuggestions
                 zsh-autocomplete # https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df
+                rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -148,4 +149,26 @@ compdef _nosleep nosleep
 alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
 
 alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl suspend && exit'
+
+alias cr='cargo run'
+
+export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:/usr/local/cuda-12.3/bin/
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+
+plugin=(
+  pyenv
+)
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+
+
+
+
 
