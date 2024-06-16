@@ -155,20 +155,9 @@ alias cr='cargo run'
 export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:/usr/local/cuda-12.3/bin/
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
-
 plugin=(
   pyenv
 )
-
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-
-
-
-
-
-
