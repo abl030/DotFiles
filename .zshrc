@@ -169,11 +169,11 @@ function push_dotfiles() {
     read commit_message
     git add .zshrc
     git commit -m "$commit_message"
-    git push origin main
+    git push origin
 }
 
 # Similar function to easily pull remote changes
 function pull_dotfiles() {
     cd ~/DotFiles || return
-    git pull origin main
+    git pull origin
 }
