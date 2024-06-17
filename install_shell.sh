@@ -15,3 +15,10 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${Z
 
 #Powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+#install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+#install pyenv
+brew update
+brew install pyenv
