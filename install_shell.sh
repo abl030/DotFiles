@@ -16,9 +16,6 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${Z
 #Powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Print a message to remind the user to restart the shell
 echo "Homebrew will be installed. Please restart your shell or open a new terminal session, then run this script again to continue the setup."
 echo "After restarting, re-run this script"
@@ -36,3 +33,4 @@ else
     echo "Please restart your shell and run this script again."
     exit 1
 
+fi
