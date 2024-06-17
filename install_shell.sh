@@ -1,3 +1,11 @@
+
+
+#install dependencies
+sudo apt install zsh curl -y
+
+#install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 #ZSH plugins
 #TODO - Use a plugin manager???
 
@@ -29,6 +37,7 @@ if command -v brew >/dev/null 2>&1; then
     # Install pyenv
     brew install pyenv
 else
+#install homebrew and asks user to restart shell environment
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo "Please restart your shell and run this script again."
     exit 1
