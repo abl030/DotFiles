@@ -167,7 +167,7 @@ function push_dotfiles() {
     cd ~/DotFiles || return
     echo "Enter commit message: "
     read commit_message
-    git add .zshrc
+    git add --all
     git commit -m "$commit_message"
     git push origin
 }
