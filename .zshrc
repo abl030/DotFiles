@@ -90,6 +90,7 @@ plugins=(       tmux
                 zsh-autosuggestions
                 zsh-autocomplete # https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df
                 rust
+                pyenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -131,23 +132,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
 
-# Autocompletion function
-_nosleep() {
-    _arguments ':action:->action'
-    case $state in
-        (action)
-            _describe 'actions' \
-                'sleep.target:Mask sleep.target' \
-                'suspend.target:Mask suspend.target' \
-                'hibernate.target:Mask hibernate.target' \
-                'hybrid-sleep.target:Mask hybrid-sleep.target'
-            ;;
-    esac
-}
-compdef _nosleep nosleep
-
-alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target'
-
 alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl suspend && exit'
 
 alias cr='cargo run'
@@ -155,9 +139,7 @@ alias cr='cargo run'
 export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:/usr/local/cuda-12.3/bin/
 
-plugin=(
-  pyenv
-)
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
