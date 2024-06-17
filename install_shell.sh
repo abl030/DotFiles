@@ -1,3 +1,8 @@
+#adjust our git profile
+git config --global user.name "abl030"
+git config --global user.email abl030@gmail.com
+
+
 #create our symlinks
 ln -s ~/DotFiles/.zshrc ~/.zshrc
 ln -s ~/DotFiles/.vimrc ~/.vimrc
