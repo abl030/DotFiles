@@ -26,9 +26,12 @@ echo "Installing GitHub CLI (gh)..."
 sudo apt install gh -y
 
 echo "GitHub CLI (gh) installation complete."
-fi
 
 gh auth login
+
+fi
+
+
 
 #Pull in the repo
 gh repo clone abl030/DotFiles
