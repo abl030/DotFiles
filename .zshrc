@@ -161,3 +161,19 @@ plugin=(
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Function to quickly push our dotfile changes
+function push_dotfiles() {
+    cd ~/DotFiles || return
+    echo "Enter commit message: "
+    read commit_message
+    git add .zshrc
+    git commit -m "$commit_message"
+    git push origin main
+}
+
+# Similar function to easily pull remote changes
+function pull_dotfiles() {
+    cd ~/DotFiles || return
+    git pull origin main
+}
