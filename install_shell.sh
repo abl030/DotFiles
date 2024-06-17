@@ -16,9 +16,23 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${Z
 #Powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-#install homebrew
+# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#install pyenv
-brew update
-brew install pyenv
+# Print a message to remind the user to restart the shell
+echo "Homebrew will be installed. Please restart your shell or open a new terminal session, then run this script again to continue the setup."
+echo "After restarting, re-run this script"
+
+# Check if Homebrew is installed and proceed if it is
+if command -v brew >/dev/null 2>&1; then
+    echo "Continuing with the installation..."
+    # Update Homebrew
+    brew update
+
+    # Install pyenv
+    brew install pyenv
+else
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "Please restart your shell and run this script again."
+    exit 1
+
