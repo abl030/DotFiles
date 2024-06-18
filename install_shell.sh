@@ -1,7 +1,40 @@
+
+
 #adjust our git profile
 git config --global user.name "abl030"
 git config --global user.email abl030@gmail.com
 
+#install GH
+
+# Check if gh is installed
+if command_exists gh; then
+    echo "GitHub CLI (gh) is already installed."
+else
+#installwget and GH
+sudo apt install wget -y
+# Set up the GitHub CLI repository and keyring
+echo "Setting up GitHub CLI repository and keyring..."
+sudo mkdir -p -m 755 /etc/apt/keyrings
+wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+# Update package lists and install gh
+echo "Updating package lists..."
+sudo apt update
+echo "Installing GitHub CLI (gh)..."
+sudo apt install gh -y
+
+echo "GitHub CLI (gh) installation complete."
+
+gh auth login
+
+fi
+
+
+
+#Pull in the repo
+gh repo clone abl030/DotFiles
 
 #create our symlinks
 ln -s ~/DotFiles/.zshrc ~/.zshrc
@@ -54,3 +87,6 @@ else
     exit 1
 
 fi
+
+
+#andthisisanothertest
