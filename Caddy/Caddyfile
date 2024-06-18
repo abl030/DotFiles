@@ -1,8 +1,6 @@
-
-
 slsk.ablz.au {
 	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-	
+
 	reverse_proxy 192.168.11.3:6080 {
 		#               transport http {
 		#                       tls_insecure_skip_verify
@@ -33,12 +31,12 @@ unifi.ablz.au {
 }
 
 router.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy https://192.168.1.1 {
-                transport http {
-                        tls_insecure_skip_verify
-                }
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy https://192.168.1.1 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
 }
 
 audiobook.ablz.au {
@@ -114,56 +112,56 @@ plex.ablz.au {
 }
 
 pdf.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.1.2:8089 {
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.1.2:8089 {
+	}
 }
 
 youtube.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.1.6:3000 {
-#        log {
-#	    output discard
-#	 }	
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.1.6:3000 {
+		#        log {
+		#	    output discard
+		#	 }	
 	}
 }
 
 cooking.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.1.2:3000 {
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.1.2:3000 {
+	}
 }
 
 tdarr.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.1.13:8265 {
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.1.13:8265 {
+	}
 }
 
 mumrouter.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.3.1:80 {
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.3.1:80 {
+	}
 }
 
 pihole.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        encode zstd gzip
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	encode zstd gzip
 	redir / /admin{uri}
 	reverse_proxy 192.168.1.9:80 {
-        }
+	}
 }
 
 vpnpihole.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        encode zstd gzip
-        redir / /admin{uri}
-        reverse_proxy 192.168.1.4:80 {
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	encode zstd gzip
+	redir / /admin{uri}
+	reverse_proxy 192.168.1.4:80 {
+	}
 }
 
 mumnas.ablz.au {
-        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.3.176:5000 {
-        }
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.3.176:5000 {
+	}
 }
