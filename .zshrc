@@ -136,6 +136,8 @@ alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.targe
 
 alias cr='cargo run'
 
+alias  epi!="wakeonlan       18:c0:4d:65:86:e8 "
+
 export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:/usr/local/cuda-12.3/bin/
 
