@@ -163,3 +163,30 @@ function pull_dotfiles() {
 
 #thisisatest
 
+function edit() {
+  case $1 in
+    zsh)
+      nano ~/.zshrc
+      ;;
+    caddyfile)
+      sudo nano /etc/caddy/Caddyfile
+      ;;
+    *)
+      echo "Unknown argument: $1"
+      ;;
+  esac
+}
+
+function reload() {
+  case $1 in
+    caddy)
+      sudo systemctl restart caddy
+      ;;
+    zsh)
+      source ~/.zshrc
+      ;;
+    *)
+      echo "Unknown argument: $1"
+      ;;
+  esac
+}
