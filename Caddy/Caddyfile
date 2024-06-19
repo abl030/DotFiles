@@ -2,6 +2,8 @@
 #probably best to create a new token and deprecate the old one
 #cloudflare.ini is chmod 600 with the format and docs available at https://certbot-dns-cloudflare.readthedocs.io/en/stable/
 #sudo certbot -v certonly --dns-cloudflare --dns-cloudflare-credentials /etc/letsencrypt/cloudflare.ini -d "*.ablz.au"
+#caddy has to run as root unfortunately, though in this implementation its not internet facing.
+# sudo ln -s /home/abl030/DotFiles/Caddy/Caddyfile /etc/caddy/Caddyfile
 
 slsk.ablz.au {
 	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
