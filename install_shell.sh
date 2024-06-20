@@ -27,7 +27,7 @@ sudo apt install gh -y
 
 echo "GitHub CLI (gh) installation complete."
 
-gh auth login
+sudo gh auth login
 
 fi
 
@@ -35,13 +35,6 @@ fi
 
 #Pull in the repo
 gh repo clone abl030/DotFiles
-
-#create our symlinks
-ln -s ~/DotFiles/.zshrc ~/.zshrc
-ln -s ~/DotFiles/.vimrc ~/.vimrc
-ln -s ~/DotFiles/.p10k.zsh ~/.p10k.zsh
-ln -s ~/DotFiles/vim-vim ~/vim.vim
-ln -s ~/DotFiles/.tmux.conf ~/.tmux.conf
 
 
 #install dependencies
@@ -67,6 +60,18 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${Z
 
 #Powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+#create our symlinks
+rm ~/.zshrc
+ln -s ~/DotFiles/.zshrc ~/.zshrc
+rm ~/.vimrc
+ln -s ~/DotFiles/.vimrc ~/.vimrc
+rm ~/.p10k.zsh
+ln -s ~/DotFiles/.p10k.zsh ~/.p10k.zsh
+rm ~/vim.vim
+ln -s ~/DotFiles/vim-vim ~/vim.vim
+rm ~/.tmux.conf
+ln -s ~/DotFiles/.tmux.conf ~/.tmux.conf
 
 # Print a message to remind the user to restart the shell
 echo "Homebrew will be installed. Please restart your shell or open a new terminal session, then run this script again to continue the setup."
