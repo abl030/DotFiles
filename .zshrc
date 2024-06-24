@@ -173,6 +173,9 @@ function edit() {
     caddyfile)
       sudo nano /etc/caddy/Caddyfile
       ;;
+     diary)
+      cd /mnt/data/Life/Zet/Projects/Diary && nvim
+     ;;
     *)
       echo "Unknown argument: $1"
       ;;
