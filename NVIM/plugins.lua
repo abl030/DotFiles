@@ -1,4 +1,4 @@
--- ln 's' plugins.lua ~/.config/nvim/lua/plugins
+-- ln -s plugins.lua ~/.config/nvim/lua/plugins
 
 local plugins = {
   {
