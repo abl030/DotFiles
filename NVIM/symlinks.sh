@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #run this after installing NVCHad!!!!
+#don't run this twice..... durp.
 
 #plugins galore
 ln -s /home/abl030/DotFiles/NVIM/plugins.lua ~/.config/nvim/lua/plugins/plugins.lua
