@@ -172,3 +172,9 @@ mumnas.ablz.au {
 	reverse_proxy 192.168.3.176:5000 {
 	}
 }
+
+backup.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.1.2:8200 {
+        }
+}

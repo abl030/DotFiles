@@ -1,10 +1,10 @@
 -- ln -s plugins.lua ~/.config/nvim/lua/plugins
 
 local plugins = {
-  {
-    "nvim-treesitter/nvim-treesitter",
+--  {
+ --   "nvim-treesitter/nvim-treesitter",
    -- opts = override
-  },
+--  },
   {
     "tpope/vim-sensible",
     lazy = false,
