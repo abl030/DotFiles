@@ -6,6 +6,10 @@ local M = {}
 
 M.ui = {
 	theme = "onedark",
+
+-- This is actually here : https://github.com/NvChad/starter/blob/main/lua/chadrc.lua
+  -- We are overiding the ui.lua here and loading the dashboard on startup. 
+  -- Because NVChad now loads NVChad as a plugin.
   nvdash = {
     load_on_startup = true,
   }

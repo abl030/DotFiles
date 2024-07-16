@@ -27,7 +27,7 @@ sudo apt install gh -y
 
 echo "GitHub CLI (gh) installation complete."
 
-sudo gh auth login
+gh auth login
 
 fi
 
@@ -69,7 +69,7 @@ ln -s ~/DotFiles/.vimrc ~/.vimrc
 rm ~/.p10k.zsh
 ln -s ~/DotFiles/.p10k.zsh ~/.p10k.zsh
 rm ~/vim.vim
-ln -s ~/DotFiles/vim-vim ~/vim.vim
+ln -s ~/DotFiles/vim.vim ~/vim.vim
 rm ~/.tmux.conf
 ln -s ~/DotFiles/.tmux.conf ~/.tmux.conf
 
