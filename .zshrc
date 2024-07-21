@@ -195,3 +195,5 @@ function reload() {
       ;;
   esac
 }
+
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/abl030/.local/share/flatpak/exports/share"
