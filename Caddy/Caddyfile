@@ -145,11 +145,11 @@ tdarr.ablz.au {
 	}
 }
 
-#mumrouter.ablz.au {
-#	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-#	reverse_proxy 192.168.4.1:80 {
-#	}
-#}
+mumrouter.ablz.au {
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.4.1:80 {
+	}
+}
 
 pihole.ablz.au {
 	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
@@ -167,11 +167,11 @@ vpnpihole.ablz.au {
 	}
 }
 
-#mumnas.ablz.au {
-#	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-#	reverse_proxy 192.168.4.176:5000 {
-#	}
-#}
+mumnas.ablz.au {
+	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+	reverse_proxy 192.168.4.176:5000 {
+	}
+}
 
 backup.ablz.au {
         tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
@@ -190,3 +190,10 @@ home.ablz.au {
         reverse_proxy 192.168.101.3:8123 {
         }
 }
+
+photos.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.1.2:2283 {
+        }
+}
+
