@@ -22,6 +22,7 @@ services:
       - .env
     ports:
       - 2283:3001
+    cpus: 6.0
     depends_on:
       - redis
       - database
@@ -33,9 +34,10 @@ services:
     # Example tag: ${IMMICH_VERSION:-release}-cuda
     image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}-cuda
     runtime: nvidia
-    #environment: 
-    #  - NVIDIA_VISIBLE_DEVICES: GPU-85eff454-7a75-fa3c-7732-b385fd62723f
-    #  - NVIDIA_DRIVER_CAPABILITIES: all
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=GPU-85eff454-7a75-fa3c-7732-b385fd62723f
+    #  - NVIDIA_DRIVER_CAPABILITIES=all
+    cpus: 6.0
     deploy:
       resources:
         reservations:
