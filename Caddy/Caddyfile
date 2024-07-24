@@ -169,7 +169,7 @@ vpnpihole.ablz.au {
 
 mumnas.ablz.au {
 	tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-	reverse_proxy 192.168.4.176:5000 {
+	reverse_proxy 100.100.237.21:5000 {
 	}
 }
 
