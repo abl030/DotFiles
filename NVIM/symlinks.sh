@@ -13,3 +13,9 @@ echo "dofile(vim.fn.stdpath('config') .. '/lua/init.lua')" >> ~/.config/nvim/lua
 sed -i '$d' ~/.config/nvim/lua/chadrc.lua
 echo 'return vim.tbl_deep_extend("force", M, require "ui")' >> ~/.config/nvim/lua/chadrc.lua
 ln -s ~/DotFiles/NVIM/ui.lua ~/.config/nvim/lua/ui.lua
+
+#sym in our lsp config so we can add new languages
+rm ~/.config/nvim/lua/configs/lspconfig.lua
+ln -s /home/abl030/DotFiles/NVIM/lspconfig.lua ~/.config/nvim/lua/configs/lspconfig.lua
+
+#Don't forget to run :MasonInstallAll afer all this.
