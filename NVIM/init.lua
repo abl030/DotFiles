@@ -6,8 +6,8 @@
 --   comma = "tabdo wincmd =",
 -- })
 
-
-vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after') vim.o.packpath = vim.o.runtimepath vim.cmd('source ~/.vimrc')
+-- lost to history where this came form or why its here.....
+-- vim.cmd('set runtimepath^=~/.vim runtimepath+=~/.vim/after') vim.o.packpath = vim.o.runtimepath vim.cmd('source ~/.vimrc')
 
 -- this actually sources our old vimrc.
 vim.cmd('source ~/vim.vim')
