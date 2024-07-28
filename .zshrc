@@ -168,7 +168,7 @@ function pull_dotfiles() {
 function edit() {
   case $1 in
     zsh)
-      nano ~/.zshrc
+      nvim ~/DotFiles/.zshrc
       ;;
     caddyfile)
       sudo nano /etc/caddy/Caddyfile
