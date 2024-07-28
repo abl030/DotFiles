@@ -190,10 +190,13 @@ function reload() {
     zsh)
       source ~/.zshrc
       ;;
+    nvim)
+      bash ~/DotFiles/NVIM/scripts/reload_nvim.sh
+      ;;
     *)
       echo "Unknown argument: $1"
       ;;
-  esac
+   esac
 }
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/abl030/.local/share/flatpak/exports/share"
