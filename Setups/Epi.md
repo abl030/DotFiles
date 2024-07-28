@@ -39,7 +39,9 @@ sudo netplan apply
 Applist:
 VSCode
 Firefox - so far so good on the snap? Lets see......
-
+LibreOffice, just install the snap.
+sudo snap install libreoffice
+then remember to enable autosave and to change the menu bar.
 
 
 
