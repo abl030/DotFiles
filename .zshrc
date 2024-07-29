@@ -171,7 +171,7 @@ function edit() {
       nvim ~/DotFiles/.zshrc
       ;;
     caddyfile)
-      sudo nano /etc/caddy/Caddyfile
+      sudo nvim /etc/caddy/Caddyfile
       ;;
      diary)
       cd /mnt/data/Life/Zet/Projects/Diary && nvim
