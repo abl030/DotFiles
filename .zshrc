@@ -188,7 +188,7 @@ function reload() {
       sudo systemctl restart caddy
       ;;
     zsh)
-      source ~/.zshrc
+      exec zsh
       ;;
     nvim)
       bash ~/DotFiles/NVIM/scripts/reload_nvim.sh
