@@ -197,3 +197,9 @@ photos.ablz.au {
         }
 }
 
+msn.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.1.6:8081 {
+        }
+}
+
