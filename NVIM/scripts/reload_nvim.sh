@@ -10,7 +10,7 @@ rm -rf ~/.local/share/nvim
 
 
 #install nvchad
-git clone https://github.com/NvChad/starter ~/.config/nvim 
+git clone https://github.com/NvChad/starter ~/.config/nvim
 
 #and now call our symlinks scripts
 bash ~/DotFiles/NVIM/scripts/symlinks.sh
