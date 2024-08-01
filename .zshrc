@@ -176,6 +176,9 @@ function edit() {
      diary)
       cd /mnt/data/Life/Zet/Projects/Diary && nvim
      ;;
+   cullen)
+     cd /mnt/data/Life/Zet/Cullen && nvim
+     ;;
     *)
       echo "Unknown argument: $1"
       ;;
