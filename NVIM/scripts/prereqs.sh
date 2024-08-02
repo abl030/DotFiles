@@ -11,8 +11,7 @@ sudo apt update
 #install neovim, ripgrep for fuzzy search and zip for WSL2 based machines
 #install gcc and others to stop errors
 #https://stackoverflow.com/questions/75587679/neovim-treesitter-returning-no-c-complier-error
-sudo apt install neovim zip ripgrep build-essential 
-
+sudo apt install neovim zip ripgrep build-essential shellcheck pip python3-venv
 #we need to install npm for lsp
 # installs nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
