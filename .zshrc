@@ -170,8 +170,8 @@ function edit() {
     zsh)
       nvim ~/DotFiles/.zshrc
       ;;
-    caddyfile)
-      sudo nvim /etc/caddy/Caddyfile
+    caddy)
+      nvim ~/DotFiles/Caddy/Caddyfile 
       ;;
      diary)
       cd /mnt/data/Life/Zet/Projects/Diary && nvim
