@@ -187,7 +187,7 @@ magazines.ablz.au {
 
 home.ablz.au {
         tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
-        reverse_proxy 192.168.101.3:8123 {
+        reverse_proxy 192.168.101.4:8123 {
         }
 }
 
@@ -200,6 +200,11 @@ photos.ablz.au {
 msn.ablz.au {
         tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
         reverse_proxy 192.168.1.6:8081 {
+        }
+}
+zigbee.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.101.3:8080 {
         }
 }
 
