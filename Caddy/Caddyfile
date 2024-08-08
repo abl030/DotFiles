@@ -207,4 +207,9 @@ zigbee.ablz.au {
         reverse_proxy 192.168.101.3:8080 {
         }
 }
+jelly.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.11.5:8096 {
+        }
+}
 
