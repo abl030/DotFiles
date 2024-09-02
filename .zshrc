@@ -168,13 +168,16 @@ function pull_dotfiles() {
 function edit() {
   case $1 in
     zsh)
-      nano ~/.zshrc
+      nvim ~/DotFiles/.zshrc
       ;;
-    caddyfile)
-      sudo nano /etc/caddy/Caddyfile
+    caddy)
+      nvim ~/DotFiles/Caddy/Caddyfile 
       ;;
      diary)
       cd /mnt/data/Life/Zet/Projects/Diary && nvim
+     ;;
+   cullen)
+     cd /mnt/data/Life/Zet/Cullen && nvim
      ;;
     *)
       echo "Unknown argument: $1"
@@ -188,12 +191,19 @@ function reload() {
       sudo systemctl restart caddy
       ;;
     zsh)
-      source ~/.zshrc
+      exec zsh
+      ;;
+    nvim)
+      bash ~/DotFiles/NVIM/scripts/reload_nvim.sh
       ;;
     *)
       echo "Unknown argument: $1"
       ;;
-  esac
+   esac
 }
 
 export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/abl030/.local/share/flatpak/exports/share"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

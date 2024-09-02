@@ -1,4 +1,4 @@
-echo ">^.^<"
+echo "ヽ(⌐■_■)ノ♪"
 set linebreak
 
 " Mapping to move lines down and up
