@@ -134,6 +134,8 @@ alias nosleep='sudo systemctl mask sleep.target suspend.target hibernate.target 
 
 alias gosleep='sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target && sudo systemctl suspend && exit'
 
+alias gohibe='sudo systemctl unmask hibernate.target && sudo systemctl hibernate && exit'
+
 alias cr='cargo run'
 
 alias  epi!="wakeonlan       18:c0:4d:65:86:e8 "
