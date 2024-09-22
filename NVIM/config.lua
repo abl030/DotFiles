@@ -10,6 +10,7 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		yaml = { "yamlfmt", lsp_format = "fallback" },
 		sh = { "beautysh" },
+		nix = { "nixpkgs-fmt" },
 	},
 })
 
