@@ -3,7 +3,7 @@
 #Have to uninstall Neovim first, so we can pin and re-install the dev build:daily.
 sudo apt remove neovim
 
-#instal dev ppa 
+#instal dev ppa
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
@@ -19,4 +19,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 #install ubuntu nerdfont
 mv ~/DotFiles/NVIM/scripts/UbuntuNerdFont-Regular.ttf  ~/.local/share/fonts/
 fc-cache -f -v
+
+
+#install nix multi-user. Just so we can compile nil_ls and have nix for lsp.
+sh <(curl -L https://nixos.org/nix/install) --daemon
 
