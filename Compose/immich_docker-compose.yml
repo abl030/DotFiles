@@ -100,7 +100,6 @@ services:
       ]
     restart: always
 
-    services:
   # Other services...
   power-tools:
     container_name: immich_power_tools
