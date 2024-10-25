@@ -213,3 +213,16 @@ jelly.ablz.au {
         }
 }
 
+nzbget.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.1.17:6789 {
+        }
+}
+
+nzbhydra.ablz.au {
+        tls /etc/letsencrypt/live/ablz.au/fullchain.pem /etc/letsencrypt/live/ablz.au/privkey.pem
+        reverse_proxy 192.168.1.18:5076 {
+        }
+}
+
+
