@@ -15,10 +15,13 @@ services:
     # extends:
     #   file: hwaccel.transcoding.yml
     #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=GPU-85eff454-7a75-fa3c-7732-b385fd62723f
-      - NVIDIA_DRIVER_CAPABILITIES=all
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=GPU-85eff454-7a75-fa3c-7732-b385fd62723f
+    #   - NVIDIA_DRIVER_CAPABILITIES=all
+    devices:
+      - /dev/dri:/dev/dri
+
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
@@ -38,22 +41,30 @@ services:
     container_name: immich_machine_learning
     # For hardware acceleration, add one of -[armnn, cuda, openvino] to the image tag.
     # Example tag: ${IMMICH_VERSION:-release}-cuda
-    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}-cuda
-    runtime: nvidia
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=GPU-85eff454-7a75-fa3c-7732-b385fd62723f
-    #  - NVIDIA_DRIVER_CAPABILITIES=all
-    cpuset: "0-5"
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities:
-                - gpu
+    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}-openvino
+
+    # runtime: nvidia
+    # environment:
+    #   - NVIDIA_VISIBLE_DEVICES=GPU-85eff454-7a75-fa3c-7732-b385fd62723f
+    # #  - NVIDIA_DRIVER_CAPABILITIES=all
+    # cpuset: "0-5"
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities:
+    #             - gpu
+
+    device_cgroup_rules:
+      - "c 189:* rmw"
+    devices:
+      - /dev/dri:/dev/dri
+
     volumes:
       - /mnt/user/AI/immich:/cache
+      - /dev/bus/usb:/dev/bus/usb
     env_file:
       - .env
     restart: always
